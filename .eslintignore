@@ -1,0 +1,4 @@
+bower-components/*
+coverage
+node_modules
+browser.js

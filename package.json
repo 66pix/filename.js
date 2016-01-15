@@ -1,0 +1,24 @@
+{
+  "name": "filename.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "lab": "^8.0.2",
+    "code": "^2.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "code": "^2.1.0",
+    "lab": "^8.0.2"
+  },
+  "scripts": {
+    "test": "lab --lint --coverage",
+    "build-browser": "browserify index.js --outfile browser.js"
+  },
+  "author": "Michael Robinson",
+  "license": "ISC"
+}

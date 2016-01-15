@@ -1,0 +1,21 @@
+{
+  "name": "filename.js",
+  "authors": [
+    "Michael Robinson <mike@pagesofinterest.net>"
+  ],
+  "description": "Utility object to aid in manipulating filenames with JavaScript",
+  "main": "index.js",
+  "moduleType": [],
+  "keywords": [
+    "filename"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
