@@ -10,7 +10,7 @@ Browser / Node.js object to aid in manipulating filenames with JavaScript
 var extension = filenameJs.extension('some/filename/here.js'); // js
 ```
 
-### Get the file's basename
+### Get the file basename
 ```JS
 var basename = filenameJs.basename('some/filename/here.js');   // here
 ```
