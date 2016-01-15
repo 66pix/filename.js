@@ -4,7 +4,7 @@
     "Michael Robinson <mike@pagesofinterest.net>"
   ],
   "description": "Utility object to aid in manipulating filenames with JavaScript",
-  "main": "index.js",
+  "main": "browser.js",
   "moduleType": [],
   "keywords": [
     "filename"

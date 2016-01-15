@@ -6,10 +6,6 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "lab": "^8.0.2",
-    "code": "^2.1.0"
-  },
   "devDependencies": {
     "browserify": "^13.0.0",
     "code": "^2.1.0",
