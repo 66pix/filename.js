@@ -1,7 +1,7 @@
 {
   "name": "filename.js",
   "version": "1.0.4",
-  "description": "",
+  "description": "Utility object to aid in manipulating filenames with JavaScript",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,6 +15,6 @@
     "test": "lab --lint --coverage",
     "build-browser": "browserify index.js --outfile browser.js"
   },
-  "author": "Michael Robinson",
+  "author": "Michael Robinson <mike@pagesofinterest.net>",
   "license": "ISC"
 }
