@@ -12,7 +12,7 @@ function extension(filename) {
   if (lastIndexOfDot === -1) {
     return '';
   }
-  return filename.substr(lastIndexOfDot + 1);
+  return filename.substr(lastIndexOfDot + 1).toLowerCase();
 };
 
 function basename(filename) {

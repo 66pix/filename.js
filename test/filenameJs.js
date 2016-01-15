@@ -27,7 +27,15 @@ lab.experiment('filenameJs', function() {
     done();
   })
 
-  lab.it('should return the correct extension', function(done) {
+  lab.test('should lowercase the extension', function(done) {
+    expect(filenameJs.extension('test.JPG')).to.equal('jpg');
+    expect(filenameJs.extension('test.pNg')).to.equal('png');
+    expect(filenameJs.extension('test.GIF')).to.equal('gif');
+    expect(filenameJs.extension('TEST.123.PDF')).to.equal('pdf');
+    done();
+  })
+
+  lab.test('should return the correct extension', function(done) {
     expect(filenameJs.extension('test')).to.equal('');
     expect(filenameJs.extension('test.jpg')).to.equal('jpg');
     expect(filenameJs.extension('test.png')).to.equal('png');
@@ -36,15 +44,15 @@ lab.experiment('filenameJs', function() {
     done();
   });
 
-  lab.it('should return the correct basename', function(done) {
+  lab.test('should return the correct basename', function(done) {
     expect(filenameJs.basename('test.jpg')).to.equal('test');
-    expect(filenameJs.basename('test.png')).to.equal('test');
+    expect(filenameJs.basename('tESt.png')).to.equal('tESt');
     expect(filenameJs.basename('test.gif')).to.equal('test');
     expect(filenameJs.basename('test.123.pdf')).to.equal('test.123');
     done();
   });
 
-  lab.it('should insert the timestamp at the correct position', function(done) {
+  lab.test('should insert the timestamp at the correct position', function(done) {
     expect(filenameJs.appendSuffix(123, 'test.jpg')).to.equal('test.123.jpg');
     expect(filenameJs.appendSuffix(123, 'test.png')).to.equal('test.123.png');
     expect(filenameJs.appendSuffix(123, 'test.gif')).to.equal('test.123.gif');
@@ -53,7 +61,7 @@ lab.experiment('filenameJs', function() {
     done();
   });
 
-  lab.it('should return the correct directory name with as few modifications as possible', function(done) {
+  lab.test('should return the correct directory name with as few modifications as possible', function(done) {
     expect(filenameJs.directoryName('/this/is/a/file.js')).to.equal('/this/is/a');
     expect(filenameJs.directoryName('/this/is/a')).to.equal('/this/is/a');
     expect(filenameJs.directoryName('/this/is/a/')).to.equal('/this/is/a/');
