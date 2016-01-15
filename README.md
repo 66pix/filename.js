@@ -1,6 +1,6 @@
 # filename.js
 
-Utility object to aid in manipulating filenames with JavaScript
+Browser / Node.js object to aid in manipulating filenames with JavaScript
 
 ## Usage
 
@@ -16,6 +16,6 @@ var basename = filenameJs.basename('some/filename/here.js');   // here
 ```
 
 ### Append any suffix
-```
+```JS
 filenameJs.appendSuffix(Date.now(), 'filename.js'); // filename.1452851827459.js
 ```
