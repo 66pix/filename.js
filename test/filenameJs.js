@@ -53,5 +53,12 @@ lab.experiment('filenameJs', function() {
     done();
   });
 
+  lab.it('should return the correct directory name with as few modifications as possible', function(done) {
+    expect(filenameJs.directoryName('/this/is/a/file.js')).to.equal('/this/is/a');
+    expect(filenameJs.directoryName('/this/is/a')).to.equal('/this/is/a');
+    expect(filenameJs.directoryName('/this/is/a/')).to.equal('/this/is/a/');
+    expect(filenameJs.directoryName('this/is/a')).to.equal('this/is/a');
+    done();
+  })
 })
 

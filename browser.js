@@ -4,7 +4,8 @@
 module.exports = {
   extension: extension,
   basename: basename,
-  appendSuffix: appendSuffix
+  appendSuffix: appendSuffix,
+  directoryName: directoryName
 }
 
 function extension(filename) {
@@ -36,6 +37,13 @@ function appendSuffix(suffix, filename) {
   }
 
   return newFilename.join('');
+}
+
+function directoryName(filename) {
+  if (!this.extension(filename)) {
+    return filename;
+  }
+  return filename.substr(0, filename.lastIndexOf('/'));
 }
 
 

@@ -9,11 +9,15 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "code": "^2.1.0",
-    "lab": "^8.0.2"
+    "husky": "^0.10.2",
+    "lab": "^8.0.2",
+    "nodemon": "^1.8.1"
   },
   "scripts": {
     "test": "lab --lint --coverage",
-    "build-browser": "browserify index.js --outfile browser.js"
+    "test-watch": "nodemon -x 'npm run test'",
+    "build-browser": "browserify index.js --outfile browser.js",
+    "precommit": "npm run test"
   },
   "author": "Michael Robinson <mike@pagesofinterest.net>",
   "license": "ISC"
