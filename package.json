@@ -16,7 +16,7 @@
   "scripts": {
     "test": "lab --lint --coverage",
     "test-watch": "nodemon -x 'npm run test'",
-    "build-browser": "browserify index.js --outfile browser.js",
+    "build-browser": "browserify index.js --outfile browser.js --standalone filenamejs",
     "precommit": "npm run test"
   },
   "author": "Michael Robinson <mike@pagesofinterest.net>",
