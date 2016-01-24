@@ -52,12 +52,21 @@ lab.experiment('filenameJs', function() {
     done();
   });
 
-  lab.test('should insert the timestamp at the correct position', function(done) {
+  lab.test('should insert the suffix at the correct position', function(done) {
     expect(filenameJs.appendSuffix(123, 'test.jpg')).to.equal('test.123.jpg');
     expect(filenameJs.appendSuffix(123, 'test.png')).to.equal('test.123.png');
     expect(filenameJs.appendSuffix(123, 'test.gif')).to.equal('test.123.gif');
     expect(filenameJs.appendSuffix(123, 'test.123.pdf')).to.equal('test.123.123.pdf');
     expect(filenameJs.appendSuffix(123, 'test')).to.equal('test.123');
+    done();
+  });
+
+  lab.test('should accept an array of suffixes and append them correctly', function(done) {
+    expect(filenameJs.appendSuffix([123, 'another'], 'test.jpg')).to.equal('test.123.another.jpg');
+    expect(filenameJs.appendSuffix([123, 'another'], 'test.png')).to.equal('test.123.another.png');
+    expect(filenameJs.appendSuffix([123, 'another'], 'test.gif')).to.equal('test.123.another.gif');
+    expect(filenameJs.appendSuffix([123, 'another'], 'test.123.pdf')).to.equal('test.123.123.another.pdf');
+    expect(filenameJs.appendSuffix([123, 'another'], 'test')).to.equal('test.123.another');
     done();
   });
 

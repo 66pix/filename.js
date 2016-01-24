@@ -24,11 +24,12 @@ function basename(filename) {
 }
 
 function appendSuffix(suffix, filename) {
-  var fileExtension = this.extension(filename);
+  if (Object.prototype.toString.call(suffix) !== '[object Array]' ) {
+    suffix = [suffix];
+  }
 
-  var newFilename = [
-    this.basename(filename), '.', suffix
-  ];
+  var fileExtension = this.extension(filename);
+  var newFilename = [this.basename(filename), '.'].concat(suffix.join('.'));
 
   if (fileExtension) {
     newFilename.push('.');
