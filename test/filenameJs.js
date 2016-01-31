@@ -70,6 +70,15 @@ lab.experiment('filenameJs', function() {
     done();
   });
 
+  lab.test('should not insert anything if delimiter is null or empty', function(done) {
+    expect(filenameJs.appendSuffixWithDelimiter([123, 'another'], '', 'test.jpg')).to.equal('test123another.jpg');
+    expect(filenameJs.appendSuffixWithDelimiter([123, 'another'], '', 'test.png')).to.equal('test123another.png');
+    expect(filenameJs.appendSuffixWithDelimiter([123, 'another'], '', 'test.gif')).to.equal('test123another.gif');
+    expect(filenameJs.appendSuffixWithDelimiter([123, 'another'], '', 'test.123.pdf')).to.equal('test.123123another.pdf');
+    expect(filenameJs.appendSuffixWithDelimiter([123, 'another'], '', 'test')).to.equal('test123another');
+    done();
+  });
+
   lab.test('should return the correct directory name with as few modifications as possible', function(done) {
     expect(filenameJs.directoryName('/this/is/a/file.js')).to.equal('/this/is/a');
     expect(filenameJs.directoryName('/this/is/a')).to.equal('/this/is/a');

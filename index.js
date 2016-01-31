@@ -4,6 +4,7 @@ module.exports = {
   extension: extension,
   basename: basename,
   appendSuffix: appendSuffix,
+  appendSuffixWithDelimiter: appendSuffixWithDelimiter,
   directoryName: directoryName
 }
 
@@ -24,12 +25,16 @@ function basename(filename) {
 }
 
 function appendSuffix(suffix, filename) {
+  return this.appendSuffixWithDelimiter(suffix, '.', filename)
+}
+
+function appendSuffixWithDelimiter(suffix, delimiter, filename) {
   if (Object.prototype.toString.call(suffix) !== '[object Array]' ) {
     suffix = [suffix];
   }
 
   var fileExtension = this.extension(filename);
-  var newFilename = [this.basename(filename), '.'].concat(suffix.join('.'));
+  var newFilename = [this.basename(filename), delimiter].concat(suffix.join(delimiter));
 
   if (fileExtension) {
     newFilename.push('.');
@@ -38,6 +43,7 @@ function appendSuffix(suffix, filename) {
 
   return newFilename.join('');
 }
+
 
 function directoryName(filename) {
   if (!this.extension(filename)) {
