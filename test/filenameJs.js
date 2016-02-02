@@ -87,5 +87,23 @@ lab.experiment('filenameJs', function() {
     expect(filenameJs.directoryName('file.js')).to.equal('');
     done();
   })
+
+  lab.test('should remove the last suffix', function(done) {
+    expect(filenameJs.removeSuffix('test.123.jpg')).to.equal('test.jpg');
+    expect(filenameJs.removeSuffix('test.123.png')).to.equal('test.png');
+    expect(filenameJs.removeSuffix('test.123.gif')).to.equal('test.gif');
+    expect(filenameJs.removeSuffix('test.456.123.pdf')).to.equal('test.456.pdf');
+    expect(filenameJs.removeSuffix('test')).to.equal('test');
+    done();
+  });
+
+  lab.test('should do nothing if no suffix is found for the given delimiter', function(done) {
+    expect(filenameJs.removeSuffixWithDelimiter('-', 'test.123.jpg')).to.equal('test.123.jpg');
+    expect(filenameJs.removeSuffixWithDelimiter('-', 'test.123.png')).to.equal('test.123.png');
+    expect(filenameJs.removeSuffixWithDelimiter('-', 'test.123.gif')).to.equal('test.123.gif');
+    expect(filenameJs.removeSuffixWithDelimiter('-', 'test.456.123.pdf')).to.equal('test.456.123.pdf');
+    expect(filenameJs.removeSuffixWithDelimiter('-', 'test')).to.equal('test');
+    done();
+  });
 })
 
