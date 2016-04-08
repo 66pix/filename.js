@@ -20,5 +20,6 @@
     "precommit": "npm run test"
   },
   "author": "Michael Robinson <mike@pagesofinterest.net>",
-  "license": "ISC"
+  "license": "ISC",
+  "typings": "./index.d.ts"
 }
