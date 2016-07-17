@@ -24,9 +24,10 @@
   "typings": "./index.d.ts",
   "lambci": {
     "cmd": "nave use 5 bash -c 'npm install && npm run test'",
-    "build": true,
+    "build": false,
     "branches": {
       "master": {
+        "build": true,
         "notifications": {
           "slack": {
             "channel": "#ci"
@@ -34,6 +35,7 @@
         }
       },
       "develop": {
+        "build": true,
         "notifications": {
           "slack": {
             "channel": "#ci"
