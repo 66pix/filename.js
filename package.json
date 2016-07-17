@@ -1,6 +1,6 @@
 {
   "name": "filename.js",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Utility object to aid in manipulating filenames with JavaScript",
   "main": "index.js",
   "directories": {
@@ -20,5 +20,6 @@
     "precommit": "npm run test"
   },
   "author": "Michael Robinson <mike@pagesofinterest.net>",
-  "license": "ISC"
+  "license": "ISC",
+  "typings": "./index.d.ts"
 }
