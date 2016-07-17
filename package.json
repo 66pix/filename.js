@@ -21,5 +21,33 @@
   },
   "author": "Michael Robinson <mike@pagesofinterest.net>",
   "license": "ISC",
-  "typings": "./index.d.ts"
+  "typings": "./index.d.ts",
+  "lambci": {
+    "cmd": "nave use 5 bash -c 'npm run test'",
+    "build": true,
+    "branches": {
+      "master": {
+        "notifications": {
+          "slack": {
+            "channel": "#ci"
+          }
+        }
+      },
+      "develop": {
+        "notifications": {
+          "slack": {
+            "channel": "#ci"
+          }
+        }
+      },
+      "/feature\/.*/": {
+        "build": true,
+        "notifications": {
+          "slack": {
+            "channel": "#staging-ci"
+          }
+        }
+      }
+    }
+  }
 }
