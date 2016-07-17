@@ -23,7 +23,7 @@
   "license": "ISC",
   "typings": "./index.d.ts",
   "lambci": {
-    "cmd": "nave use 5 bash -c 'npm run test'",
+    "cmd": "nave use 5 bash -c 'npm install && npm run test'",
     "build": true,
     "branches": {
       "master": {
