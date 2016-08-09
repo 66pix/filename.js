@@ -2,28 +2,33 @@
   "name": "filename.js",
   "version": "1.0.15",
   "description": "Utility object to aid in manipulating filenames with JavaScript",
-  "main": "index.js",
+  "main": "typescript/index.js",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "browserify": "^13.0.0",
-    "code": "^2.1.0",
-    "husky": "^0.10.2",
-    "lab": "^8.0.2",
-    "nodemon": "^1.8.1"
+    "browserify": "^13.1.0",
+    "code": "^3.0.2",
+    "lab": "^10.9.0",
+    "nodemon": "^1.10.0",
+    "nsp": "^2.6.1",
+    "tslint": "^3.14.0",
+    "typescript": "^1.8.10"
   },
   "scripts": {
-    "test": "lab --lint --coverage",
+    "pretest": "npm run build",
+    "test": "lab --coverage typescript/test",
     "test-watch": "nodemon -x 'npm run test'",
-    "build-browser": "browserify index.js --outfile browser.js --standalone filenamejs",
-    "precommit": "npm run test"
+    "build": "tsc",
+    "lint": "tslint -c tslint.json 'typescript/**/*.ts'",
+    "build-browser": "browserify typescript/index.js --outfile browser.js --standalone filenamejs",
+    "nsp": "nsp check npm-shrinkwrap.json"
   },
   "author": "Michael Robinson <mike@pagesofinterest.net>",
   "license": "ISC",
-  "typings": "./index.d.ts",
+  "typings": "typescript/index.d.ts",
   "lambci": {
-    "cmd": "nave use 5 bash -c 'npm install && npm run test'",
+    "cmd": "nave use 5 bash -c 'npm install && npm run nsp && npm run lint && npm run test'",
     "build": false,
     "branches": {
       "master": {
@@ -42,7 +47,7 @@
           }
         }
       },
-      "/feature\/.*/": {
+      "/feature/.*/": {
         "build": true,
         "notifications": {
           "slack": {

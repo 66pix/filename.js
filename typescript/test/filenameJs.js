@@ -17,7 +17,7 @@ lab.experiment('filenameJs', function() {
     expect(require('../index.js').basename).to.be.instanceof(Function);
     done();
   });
-  
+
   lab.test('should return the correct extension', function(done) {
     expect(filenameJs.extension('test')).to.equal('');
     expect(filenameJs.extension('test.jpg')).to.equal('jpg');
@@ -26,7 +26,7 @@ lab.experiment('filenameJs', function() {
     expect(filenameJs.extension('test.123.pdf')).to.equal('pdf');
     done();
   });
-  
+
   lab.test('should lowercase the extension', function(done) {
     expect(filenameJs.extension('test.JPG')).to.equal('jpg');
     expect(filenameJs.extension('test.pNg')).to.equal('png');

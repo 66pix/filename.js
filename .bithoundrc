@@ -1,5 +1,8 @@
 {
  "ignore": [
     "browser.js"
+  ],
+  "test": ]
+    "typescript/test/**"
   ]
 }
