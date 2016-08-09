@@ -16,25 +16,8 @@ lab.experiment('filenameJs', function() {
   lab.test('should export a module if exports is defined', function(done) {
     expect(require('../index.js').basename).to.be.instanceof(Function);
     done();
-  })
-
-  lab.test('should return the correct extension', function(done) {
-    expect(filenameJs.extension('test')).to.equal('');
-    expect(filenameJs.extension('test.jpg')).to.equal('jpg');
-    expect(filenameJs.extension('test.png')).to.equal('png');
-    expect(filenameJs.extension('test.gif')).to.equal('gif');
-    expect(filenameJs.extension('test.123.pdf')).to.equal('pdf');
-    done();
-  })
-
-  lab.test('should lowercase the extension', function(done) {
-    expect(filenameJs.extension('test.JPG')).to.equal('jpg');
-    expect(filenameJs.extension('test.pNg')).to.equal('png');
-    expect(filenameJs.extension('test.GIF')).to.equal('gif');
-    expect(filenameJs.extension('TEST.123.PDF')).to.equal('pdf');
-    done();
-  })
-
+  });
+  
   lab.test('should return the correct extension', function(done) {
     expect(filenameJs.extension('test')).to.equal('');
     expect(filenameJs.extension('test.jpg')).to.equal('jpg');
@@ -43,6 +26,14 @@ lab.experiment('filenameJs', function() {
     expect(filenameJs.extension('test.123.pdf')).to.equal('pdf');
     done();
   });
+  
+  lab.test('should lowercase the extension', function(done) {
+    expect(filenameJs.extension('test.JPG')).to.equal('jpg');
+    expect(filenameJs.extension('test.pNg')).to.equal('png');
+    expect(filenameJs.extension('test.GIF')).to.equal('gif');
+    expect(filenameJs.extension('TEST.123.PDF')).to.equal('pdf');
+    done();
+  })
 
   lab.test('should return the correct basename', function(done) {
     expect(filenameJs.basename('test.jpg')).to.equal('test');
