@@ -2,7 +2,7 @@
  "ignore": [
     "**/*.js"
   ],
-  "test": ]
+  "test": [
     "typescript/test/**"
   ]
 }
