@@ -1,4 +1,13 @@
 "use strict";
+exports.filenameJs = {
+    extension: extension,
+    basename: basename,
+    removeSuffix: removeSuffix,
+    removeSuffixWithDelimiter: removeSuffixWithDelimiter,
+    appendSuffix: appendSuffix,
+    appendSuffixWithDelimiter: appendSuffixWithDelimiter,
+    directoryName: directoryName
+};
 function extension(filename) {
     const lastIndexOfDot = filename.lastIndexOf('.');
     if (lastIndexOfDot === -1) {

@@ -7,13 +7,14 @@
     "test": "test"
   },
   "devDependencies": {
+    "@types/node": "^6.0.32",
     "browserify": "^13.1.0",
     "code": "^3.0.2",
     "lab": "^10.9.0",
     "nodemon": "^1.10.0",
     "nsp": "^2.6.1",
     "tslint": "^3.14.0",
-    "typescript": "^1.8.10"
+    "typescript": "^2.0.0"
   },
   "scripts": {
     "pretest": "npm run build",

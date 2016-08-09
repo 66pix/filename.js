@@ -8,6 +8,16 @@ export {
   directoryName
 }
 
+export const filenameJs = {
+  extension: extension,
+  basename: basename,
+  removeSuffix: removeSuffix,
+  removeSuffixWithDelimiter: removeSuffixWithDelimiter,
+  appendSuffix: appendSuffix,
+  appendSuffixWithDelimiter: appendSuffixWithDelimiter,
+  directoryName: directoryName
+};
+
 function extension(filename: string) {
   const lastIndexOfDot = filename.lastIndexOf('.');
   if (lastIndexOfDot === -1) {
@@ -38,11 +48,13 @@ function removeSuffixWithDelimiter(delimiter: string, filename: string) {
   return fileBasename.substr(0, lastIndexOfDelimiter) + '.' + fileExtension;
 }
 
-function appendSuffix(suffix: string | string[], filename: string) {
+export type FilenameJSSuffix = number | string | (string | number)[];
+
+function appendSuffix(suffix: FilenameJSSuffix, filename: string) {
   return this.appendSuffixWithDelimiter(suffix, '.', filename);
 }
 
-function appendSuffixWithDelimiter(_suffix_: string | string[], delimiter: string, filename: string) {
+function appendSuffixWithDelimiter(_suffix_: FilenameJSSuffix, delimiter: string, filename: string) {
   let suffix: string[] = (_suffix_ as string[]);
   if (Object.prototype.toString.call(_suffix_) !== '[object Array]' ) {
     suffix = [(_suffix_ as string)];
