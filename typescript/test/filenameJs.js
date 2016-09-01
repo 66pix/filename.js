@@ -1,9 +1,9 @@
 "use strict";
-const Code = require('code');
-const Lab = require('lab');
-const lab = exports.lab = Lab.script();
-const expect = Code.expect;
-const index_1 = require('../index');
+var Code = require('code');
+var Lab = require('lab');
+var lab = exports.lab = Lab.script();
+var expect = Code.expect;
+var index_1 = require('../index');
 lab.experiment('filenameJs', function () {
     lab.before(function (done) {
         done();

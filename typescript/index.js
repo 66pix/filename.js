@@ -9,7 +9,7 @@ exports.filenameJs = {
     directoryName: directoryName
 };
 function extension(filename) {
-    const lastIndexOfDot = filename.lastIndexOf('.');
+    var lastIndexOfDot = filename.lastIndexOf('.');
     if (lastIndexOfDot === -1) {
         return '';
     }
@@ -18,7 +18,7 @@ function extension(filename) {
 exports.extension = extension;
 ;
 function basename(filename) {
-    const fileExtension = this.extension(filename);
+    var fileExtension = this.extension(filename);
     if (!Boolean(fileExtension)) {
         return filename;
     }
@@ -30,9 +30,9 @@ function removeSuffix(filename) {
 }
 exports.removeSuffix = removeSuffix;
 function removeSuffixWithDelimiter(delimiter, filename) {
-    const fileExtension = this.extension(filename);
-    const fileBasename = this.basename(filename);
-    const lastIndexOfDelimiter = fileBasename.lastIndexOf(delimiter);
+    var fileExtension = this.extension(filename);
+    var fileBasename = this.basename(filename);
+    var lastIndexOfDelimiter = fileBasename.lastIndexOf(delimiter);
     if (lastIndexOfDelimiter === -1) {
         return filename;
     }
@@ -44,12 +44,12 @@ function appendSuffix(suffix, filename) {
 }
 exports.appendSuffix = appendSuffix;
 function appendSuffixWithDelimiter(_suffix_, delimiter, filename) {
-    let suffix = _suffix_;
+    var suffix = _suffix_;
     if (Object.prototype.toString.call(_suffix_) !== '[object Array]') {
         suffix = [_suffix_];
     }
-    const fileExtension = this.extension(filename);
-    const newFilename = [this.basename(filename), delimiter].concat(suffix.join(delimiter));
+    var fileExtension = this.extension(filename);
+    var newFilename = [this.basename(filename), delimiter].concat(suffix.join(delimiter));
     if (fileExtension) {
         newFilename.push('.');
         newFilename.push(fileExtension);

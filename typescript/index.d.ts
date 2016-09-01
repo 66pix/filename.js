@@ -4,8 +4,8 @@ export declare const filenameJs: {
     basename: (filename: string) => string;
     removeSuffix: (filename: string) => any;
     removeSuffixWithDelimiter: (delimiter: string, filename: string) => string;
-    appendSuffix: (suffix: number | string | (string | number)[], filename: string) => any;
-    appendSuffixWithDelimiter: (_suffix_: number | string | (string | number)[], delimiter: string, filename: string) => string;
+    appendSuffix: (suffix: FilenameJSSuffix, filename: string) => any;
+    appendSuffixWithDelimiter: (_suffix_: FilenameJSSuffix, delimiter: string, filename: string) => string;
     directoryName: (filename: string) => string;
 };
 declare function extension(filename: string): string;
