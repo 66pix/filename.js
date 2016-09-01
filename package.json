@@ -1,6 +1,6 @@
 {
   "name": "filename.js",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Utility object to aid in manipulating filenames with JavaScript",
   "main": "typescript/index.js",
   "directories": {
